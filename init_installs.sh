@@ -15,3 +15,11 @@ sudo make install
 cd ..
 rm otp_src_19.1.tar.gz
 sudo rm -R otp_src_19.1/
+
+mkdir /opt
+cd /opt
+git clone https://github.com/elixir-lang/elixir.git
+cd elixir
+sudo make
+export PATH=$PATH:/opt/elixir/bin
+cd
