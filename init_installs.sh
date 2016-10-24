@@ -22,5 +22,15 @@ sudo rm -R otp_src_19.1/
 git clone https://github.com/elixir-lang/elixir.git
 cd elixir
 sudo make
-export PATH=$PATH:/opt/elixir/bin
+export PATH=$PATH:~/opt/elixir/bin
 cd ..
+
+wget https://nodejs.org/dist/v4.6.1/node-v4.6.1-linux-armv7l.tar.gz
+
+tar -xzf node-v4.6.1-linux-armv7l.tar.gz
+
+rm node-v4.6.1-linux-armv7l.tar.gz
+
+mv node-v4.6.1-linux-armv7l nodejs
+
+export PATH=$PATH:~/opt/nodejs/bin
