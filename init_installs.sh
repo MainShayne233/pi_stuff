@@ -1,4 +1,7 @@
 #!/bin/bash
+
+mkdir ~/opt
+cd ~/opt
 sudo apt-get update
 
 sudo apt-get install vim git postgresql -y
@@ -16,10 +19,8 @@ cd ..
 rm otp_src_19.1.tar.gz
 sudo rm -R otp_src_19.1/
 
-mkdir /opt
-cd /opt
 git clone https://github.com/elixir-lang/elixir.git
 cd elixir
 sudo make
 export PATH=$PATH:/opt/elixir/bin
-cd
+cd ..
