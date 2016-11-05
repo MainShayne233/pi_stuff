@@ -22,8 +22,8 @@ sudo rm -R otp_src_19.1/
 git clone https://github.com/elixir-lang/elixir.git
 cd elixir
 sudo make
-export PATH=$PATH:~/opt/elixir/bin
 cd ..
+
 
 wget https://nodejs.org/dist/v4.6.1/node-v4.6.1-linux-armv7l.tar.gz
 
@@ -33,4 +33,14 @@ rm node-v4.6.1-linux-armv7l.tar.gz
 
 mv node-v4.6.1-linux-armv7l nodejs
 
-export PATH=$PATH:~/opt/nodejs/bin
+sudo echo PATH=$PATH:/home/pi/opt/elixir/bin:/home/pi/opt/nodejs/bin > /etc/profile.d/opt_to_path.sh
+
+source /etc/profile
+
+yes | mix local.hex
+
+yes | mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+
+sudo -u postgres psql
+
+\password postgres
