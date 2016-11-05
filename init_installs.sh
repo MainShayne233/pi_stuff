@@ -37,9 +37,11 @@ sudo echo PATH=$PATH:/home/pi/opt/elixir/bin:/home/pi/opt/nodejs/bin > /etc/prof
 
 source /etc/profile
 
-yes | mix local.hex
+mix local.hex --force
 
-yes | mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
+
+mix loxal.rebar --force
 
 sudo -u postgres psql
 
